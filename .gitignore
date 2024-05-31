@@ -11,6 +11,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# husky配置
+/.husky
+
 # Editor directories and files
 .idea
 .vscode
