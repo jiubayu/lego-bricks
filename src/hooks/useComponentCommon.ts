@@ -6,7 +6,7 @@ const useComponentCommon = (
   props: Readonly<Partial<CommonComponentProps> & {isEditing: boolean}>,
   picks: string[]
 ) => {
-  const styleProps:any = computed(() => pick(props, picks));
+  const styleProps: any = computed(() => pick(props, picks));
   const handleClick = () => {
     if (props.actionType === 'url' && props.url && !props.isEditing) {
       window.location.href = props.url;

@@ -1,11 +1,11 @@
 {
   "name": "lego-birks",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "type": "module",
   "main": "dist/lego-birks.umd.js",
   "module": "dist/lego-birks.esm.js",
-  "types":"dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "author": "tb_yang",
   "license": "MIT",
   "keywords": [
@@ -13,12 +13,16 @@
     "ui",
     "vue3"
   ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "rimraf ./dist && npm run build:esm && npm run build:umd",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint --ext js,ts,tsx src",
     "build:esm": "rollup --config build/rollup.esm.config.js ",
-    "build:umd": "rollup --config build/rollup.umd.config.js "
+    "build:umd": "rollup --config build/rollup.umd.config.js ",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -38,11 +42,13 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^9.0.11",
     "rimraf": "^5.0.7",
     "rollup": "^4.18.0",
     "rollup-plugin-css-only": "^4.5.2",
