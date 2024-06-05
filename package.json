@@ -1,6 +1,6 @@
 {
   "name": "lego-birks",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "main": "dist/lego-birks.cmd.js",
   "module": "dist/lego-birks.esm.js",
