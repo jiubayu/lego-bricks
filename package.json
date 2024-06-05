@@ -1,8 +1,7 @@
 {
   "name": "lego-birks",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "private": false,
-  "type": "module",
   "main": "dist/lego-birks.umd.js",
   "module": "dist/lego-birks.esm.js",
   "types": "dist/index.d.ts",
@@ -20,8 +19,8 @@
     "serve": "vue-cli-service serve",
     "build": "rimraf ./dist && npm run build:esm && npm run build:umd",
     "lint": "eslint --ext js,ts,tsx src",
-    "build:esm": "rollup --config build/rollup.esm.config.js ",
-    "build:umd": "rollup --config build/rollup.umd.config.js ",
+    "build:esm": "rollup --config build/rollup.esm.config.mjs ",
+    "build:umd": "rollup --config build/rollup.umd.config.mjs ",
     "prepublishOnly": "npm run build",
     "prepare": "husky install"
   },
