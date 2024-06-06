@@ -1,5 +1,5 @@
 declare const _default: import("vue").DefineComponent<{
-    src: {
+    imageSrc: {
         type: StringConstructor;
         default: string;
     };
@@ -75,19 +75,16 @@ declare const _default: import("vue").DefineComponent<{
         type: StringConstructor;
         default: string;
     };
+} & {
     isEditing: {
         type: BooleanConstructor;
         default: boolean;
-    };
-    tag: {
-        type: StringConstructor;
-        default: string;
     };
 }, {
     styleProps: any;
     handleClick: () => void;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
-    src: {
+    imageSrc: {
         type: StringConstructor;
         default: string;
     };
@@ -163,16 +160,13 @@ declare const _default: import("vue").DefineComponent<{
         type: StringConstructor;
         default: string;
     };
+} & {
     isEditing: {
         type: BooleanConstructor;
         default: boolean;
     };
-    tag: {
-        type: StringConstructor;
-        default: string;
-    };
 }>>, {
-    src: string;
+    imageSrc: string;
     actionType: string;
     url: string;
     height: string;
@@ -192,6 +186,5 @@ declare const _default: import("vue").DefineComponent<{
     top: string;
     right: string;
     isEditing: boolean;
-    tag: string;
 }, {}>;
 export default _default;

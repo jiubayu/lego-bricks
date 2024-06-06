@@ -75,13 +75,10 @@ declare const _default: import("vue").DefineComponent<{
         type: StringConstructor;
         default: string;
     };
+} & {
     isEditing: {
         type: BooleanConstructor;
         default: boolean;
-    };
-    tag: {
-        type: StringConstructor;
-        default: string;
     };
 }, {
     styleProps: any;
@@ -163,13 +160,10 @@ declare const _default: import("vue").DefineComponent<{
         type: StringConstructor;
         default: string;
     };
+} & {
     isEditing: {
         type: BooleanConstructor;
         default: boolean;
-    };
-    tag: {
-        type: StringConstructor;
-        default: string;
     };
 }>>, {
     backgroundColor: string;
@@ -192,6 +186,5 @@ declare const _default: import("vue").DefineComponent<{
     top: string;
     right: string;
     isEditing: boolean;
-    tag: string;
 }, {}>;
 export default _default;

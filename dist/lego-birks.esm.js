@@ -3342,7 +3342,7 @@ const shapeDefaultProps = {
     ...commonDefaultProps,
 };
 const imageDefaultProps = {
-    src: 'test.url',
+    imageSrc: 'test.url',
     ...commonDefaultProps,
 };
 const textStylePropNames = without(Object.keys(textDefaultProps), 'actionType', 'url', 'text');
@@ -3417,13 +3417,7 @@ script$3.install = (app) => {
 const defaultProps$1 = transformToComponentProps(imageDefaultProps);
 var script$2 = defineComponent({
     name: 'LImage',
-    props: {
-        tag: {
-            type: String,
-            default: 'div',
-        },
-        ...defaultProps$1,
-    },
+    props: defaultProps$1,
     setup(props) {
         const { styleProps, handleClick } = useComponentCommon(props, imageStylePropsNames);
         return {
@@ -3437,7 +3431,7 @@ const _hoisted_1$1 = ["src"];
 
 function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return (openBlock(), createElementBlock("img", {
-    src: _ctx.src,
+    src: _ctx.imageSrc,
     style: normalizeStyle(_ctx.styleProps),
     class: "l-image-component",
     onClick: _cache[0] || (_cache[0] = withModifiers((...args) => (_ctx.handleClick && _ctx.handleClick(...args)), ["prevent"]))
@@ -3455,13 +3449,7 @@ script$2.install = (app) => {
 const defaultProps = transformToComponentProps(shapeDefaultProps);
 var script$1 = defineComponent({
     name: 'LShape',
-    props: {
-        tag: {
-            type: String,
-            default: 'div',
-        },
-        ...defaultProps,
-    },
+    props: defaultProps,
     setup(props) {
         const { styleProps, handleClick } = useComponentCommon(props, shapeStylePropsNames);
         return {

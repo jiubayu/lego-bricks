@@ -65,7 +65,7 @@ export interface ShapeComponentProps extends CommonComponentProps {
     backgroundColor: string;
 }
 export interface ImageComponentProps extends CommonComponentProps {
-    src: string;
+    imageSrc: string;
 }
 export declare const isEditingProps: {
     isEditing: {
