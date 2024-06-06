@@ -1,47 +1,13 @@
-import fs from 'fs';
-import vuePlugin from 'rollup-plugin-vue';
-import css from 'rollup-plugin-css-only';
-import typescript from 'rollup-plugin-typescript2';
-import json from '@rollup/plugin-json';
-import {nodeResolve} from '@rollup/plugin-node-resolve';
-import excludeDependenciesFromBundle from 'rollup-plugin-exclude-dependencies-from-bundle';
-import pkg from '../package.json' assert {type: 'json'};
-const {name} = pkg;
-const file = (type) => `dist/${name}.${type}.js`;
+import basicConfig, {name, file} from './rollup.config.mjs';
+import vue from 'rollup-plugin-vue';
 
-const overrides = {
-  compilerOptions: {
-    declaration: true,
-  },
-  exclude: ['node_modules', 'src/App.vue', 'src/main.ts'],
-};
+basicConfig.plugins.push(vue({css: false, template: {optimizeSSR: true}}));
 
 export default {
-  input: 'src/index.ts',
+  ...basicConfig,
   output: {
-    name: 'LegoComponents',
+    name,
     file: file('umd'),
     format: 'umd',
-    globals: {
-      vue: 'Vue',
-      'lodash-es': '_',
-    },
-    exports: 'named',
   },
-  plugins: [
-    vuePlugin(),
-    nodeResolve(),
-    excludeDependenciesFromBundle({
-      peerDependencies: true,
-      dependencies: false,
-    }),
-    typescript({tsconfigOverride: overrides}),
-    json(),
-    css({
-      output(style) {
-        !fs.existsSync('dist') && fs.mkdirSync('dist');
-        fs.writeFileSync(`dist/${name}.css`, style);
-      },
-    }),
-  ],
 };

@@ -93,7 +93,7 @@ export interface ShapeComponentProps extends CommonComponentProps {
   backgroundColor: string;
 }
 export interface ImageComponentProps extends CommonComponentProps {
-  src: string;
+  imageSrc: string;
 }
 
 export const isEditingProps = {
@@ -122,7 +122,7 @@ export const shapeDefaultProps: ShapeComponentProps = {
   ...commonDefaultProps,
 };
 export const imageDefaultProps: ImageComponentProps = {
-  src: 'test.url',
+  imageSrc: 'test.url',
   ...commonDefaultProps,
 };
 export const textStylePropNames = without(

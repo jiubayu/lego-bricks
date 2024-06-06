@@ -1,6 +1,6 @@
 {
   "name": "lego-birks",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "private": false,
   "main": "dist/lego-birks.umd.js",
   "module": "dist/lego-birks.esm.js",
@@ -22,7 +22,8 @@
     "build:esm": "rollup --config build/rollup.esm.config.mjs ",
     "build:umd": "rollup --config build/rollup.umd.config.mjs ",
     "prepublishOnly": "npm run build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rimraf ./dist"
   },
   "dependencies": {
     "lodash-es": "^4.17.15"

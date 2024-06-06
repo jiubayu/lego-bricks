@@ -1,7 +1,7 @@
 
 <template>
   <img
-    :src="src"
+    :src="imageSrc"
     :style="styleProps"
     class="l-image-component"
     @click.prevent="handleClick"
@@ -18,13 +18,7 @@ import useComponentCommon from '../../hooks/useComponentCommon';
 const defaultProps = transformToComponentProps(imageDefaultProps);
 export default defineComponent({
   name: 'LImage',
-  props: {
-    tag: {
-      type: String,
-      default: 'div',
-    },
-    ...defaultProps,
-  },
+  props: defaultProps,
   setup(props) {
     const {styleProps, handleClick} = useComponentCommon(
       props,

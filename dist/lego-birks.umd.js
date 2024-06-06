@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('vue')) :
   typeof define === 'function' && define.amd ? define(['exports', 'vue'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.LegoComponents = {}, global.Vue));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["lego-birks"] = {}, global.vue));
 })(this, (function (exports, vue) { 'use strict';
 
   /** Detect free variable `global` from Node.js. */
@@ -2325,10 +2325,11 @@
     if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
       return false;
     }
-    // Assume cyclic values are equal.
-    var stacked = stack.get(array);
-    if (stacked && stack.get(other)) {
-      return stacked == other;
+    // Check that cyclic values are equal.
+    var arrStacked = stack.get(array);
+    var othStacked = stack.get(other);
+    if (arrStacked && othStacked) {
+      return arrStacked == other && othStacked == array;
     }
     var index = -1,
         result = true,
@@ -2555,10 +2556,11 @@
         return false;
       }
     }
-    // Assume cyclic values are equal.
-    var stacked = stack.get(object);
-    if (stacked && stack.get(other)) {
-      return stacked == other;
+    // Check that cyclic values are equal.
+    var objStacked = stack.get(object);
+    var othStacked = stack.get(other);
+    if (objStacked && othStacked) {
+      return objStacked == other && othStacked == object;
     }
     var result = true;
     stack.set(object, other);
@@ -3187,6 +3189,10 @@
     while (nested != null && ++index < length) {
       var key = toKey(path[index]),
           newValue = value;
+
+      if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+        return object;
+      }
 
       if (index != lastIndex) {
         var objValue = nested[key];

@@ -18,13 +18,7 @@ import useComponentCommon from '../../hooks/useComponentCommon';
 const defaultProps = transformToComponentProps(shapeDefaultProps);
 export default defineComponent({
   name: 'LShape',
-  props: {
-    tag: {
-      type: String,
-      default: 'div',
-    },
-    ...defaultProps,
-  },
+  props: defaultProps,
   setup(props) {
     const {styleProps, handleClick} = useComponentCommon(
       props,
