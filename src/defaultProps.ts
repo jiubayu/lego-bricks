@@ -50,6 +50,10 @@ export interface CommonComponentProps {
   left: string;
   top: string;
   right: string;
+  // 是否隐藏
+  isHidden: boolean,
+  // 是否锁定
+  isLocked: boolean,
 }
 export const commonDefaultProps: CommonComponentProps = {
   // actions
@@ -75,6 +79,8 @@ export const commonDefaultProps: CommonComponentProps = {
   left: '0',
   top: '0',
   right: '0',
+  isHidden: false,
+  isLocked: false,
 };
 export interface TextComponentProps extends CommonComponentProps {
   text: string;

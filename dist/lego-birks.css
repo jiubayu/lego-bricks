@@ -9,11 +9,9 @@ button.l-text-component {
 .l-text-component {
   box-sizing: border-box;
   white-space: pre-wrap;
-  position: relative !important;
 }
 
 
 .l-image-component {
   max-width: 100%;
-  position: relative !important;
 }
