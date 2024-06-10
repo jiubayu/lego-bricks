@@ -47,6 +47,8 @@ export interface CommonComponentProps {
     left: string;
     top: string;
     right: string;
+    isHidden: boolean;
+    isLocked: boolean;
 }
 export declare const commonDefaultProps: CommonComponentProps;
 export interface TextComponentProps extends CommonComponentProps {
